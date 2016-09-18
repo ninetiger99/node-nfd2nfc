@@ -19,7 +19,7 @@ var target_dir = argv.directory;
 var walk = function(argDir) {
   if (!fs.existsSync(argDir)) {
     console.log("Directory " + argDir + " is not exist!");
-    process.exit(1);
+    return -1;
   }
 
   var dirList = fs.readdirSync(argDir); 
@@ -50,6 +50,22 @@ var walk = function(argDir) {
 
     file = argDir + '/' + file;
   });
+
+  return 0;
 }
 
-walk(target_dir);
+// main routine
+var ret = 0;
+if (typeof target_dir != "string"){
+  // multiple options
+  target_dir.forEach(function(item){
+    ret += walk(item);
+  });
+}else{
+  // single options
+  ret += walk(target_dir);
+}
+// return error count
+// 0 is fine
+// negetive number means error count, for example, -2 means two error
+process.exit(ret);

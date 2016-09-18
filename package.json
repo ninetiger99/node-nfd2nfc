@@ -21,6 +21,13 @@
     "Rename"
   ],
   "author": "kiros33",
+  "contributors": [
+    {
+      "name": "ninetiger",
+      "email" : "admin@ninetiger.com",
+      "url" : "http://blog.ninetiger.com/"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kiros33/node-nfd2nfc/issues"
