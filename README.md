@@ -20,7 +20,7 @@ File rename for NFD Unicode characters to NFC
 require('optimist')
 ```
 Options:
-  -d, --directory  [required]  [default: "."]
+  -d, --directory  [required]  [default: "."] [multiple directories support]
   -r, --recursive
 ```
 
@@ -48,4 +48,10 @@ node nfd2nfc.js -d "%USERPROFILE%\\Downloads\\node-nfd2nfc\\test\\"
 
 ```
 node nfd2nfc.js -d "%USERPROFILE%\\Downloads\\node-nfd2nfc\\test\\" -r
+```
+
+## 여러 폴더 변환 실행 (Recursive)
+
+```
+node nfd2nfc.js -d "%USERPROFILE%\\Downloads\\node-nfd2nfc\\test\\" -d "%USERPROFILE%\\Downloads\\node-nfd2nfc\\test2\\" -r
 ```
